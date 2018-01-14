@@ -2,8 +2,6 @@
 /log/*
 /tmp/*
 
-.classpath
-.project
 
 /.settings/*
 /bin/*
