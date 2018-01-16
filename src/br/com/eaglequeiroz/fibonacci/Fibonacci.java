@@ -33,7 +33,7 @@ public class Fibonacci {
         }
     }
     public static void main(String args[]) {
-    	Long result = fibo(Long.MAX_VALUE);
+    	Long result = fibo(2l);
         System.out.println("The Fibonacci sequence ends when the " + iLoop + " element is reached and its value is: " + result);
         System.out.println("The sum of the even Fibonacci Numbers is: " + evenFiboNumbersSum);
     }
