@@ -1,6 +1,6 @@
 package br.com.eaglequeiroz.arrays;
 
-import java.util.Arrays;
+import java.util.HashSet;
 
 /*
 * Write a function:
@@ -28,25 +28,30 @@ import java.util.Arrays;
 
 public class SmallestPositiveInteger {
 
-	static int solution(int[] A) {
-		Arrays.sort(A);
-		
-		for (int i = 0; i < A.length; i++) {
-			if(A[i] > 0 && i != A.length && A[i+1] != A[i] + 1) {
-				return A[i] + 1;
-			} else if(i == A.length) {
-				return A[i] +1;
-			}
+	private static int solution(int[] A) {
+		int result = 1;
+		HashSet<Integer> setList = new HashSet<>();
+
+		for (int i : A) {
+			setList.add(A[i]);
 		}
-		
-		return 1;
+
+		while (setList.contains(result)) {
+			result++;
+		}
+
+		return result;
 	}
 	
 	public static void main(String[] args) {
+
+		int[] A = {1, 3, 6, 4, 1, 2};
+		int[] B = {1, 2, 3};
+		int[] C = {-1, -2};
 		
-		int[] a = {1,2,3};
-		
-		System.out.println(SmallestPositiveInteger.solution(a));
+		System.out.println(solution(A));
+		System.out.println(solution(B));
+		System.out.println(solution(C));
 
 	}
 
