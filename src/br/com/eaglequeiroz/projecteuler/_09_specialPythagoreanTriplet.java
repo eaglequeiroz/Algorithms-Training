@@ -10,7 +10,7 @@ package br.com.eaglequeiroz.projecteuler;
  * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
  * Find the product abc.
  */
-public class _09_SpecialPythagoreanTriplet {
+public class _09_specialPythagoreanTriplet {
 
     public static void main(String[] args) {
         System.out.println("The product of the triplets which the sum is 1000 is: " + findTheTriplets1000());
