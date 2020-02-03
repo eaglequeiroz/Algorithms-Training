@@ -1,9 +1,6 @@
 package br.com.eaglequeiroz.projecteuler;
 
-import java.util.stream.LongStream;
-
 /**
- *
  * @author Igor Queiroz
  * This Algorithm is responsible for finding the 10001st prime number
  */
@@ -15,10 +12,10 @@ public class _07_10001primeNumber {
 
     private static long _10001PrimeNumber() {
         long _10001primeNumberCounter = 0;
-        for (long i = 1; _10001primeNumberCounter <= 10001 ; i++) {
+        for (long i = 1; _10001primeNumberCounter <= 10001; i++) {
             if (isPrime(i)) {
                 _10001primeNumberCounter++;
-                if (_10001primeNumberCounter == 10001){
+                if (_10001primeNumberCounter == 10001) {
                     return i;
                 }
             }
@@ -27,6 +24,21 @@ public class _07_10001primeNumber {
     }
 
     private static boolean isPrime(long number) {
-        return number > 1 && LongStream.rangeClosed(2, number / 2).noneMatch(i -> number % i == 0);
+        //Old Solution :: Simpler but with way less performance.
+        //return number > 1 && LongStream.rangeClosed(2, number / 2).noneMatch(i -> number % i == 0);
+
+        if (number <= 1) {
+            return false;
+        }
+        if (number % 2 == 0) {
+            return number == 2;
+        }
+
+        for (long i = 3; i <= Math.sqrt(number); i += 2) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
