@@ -1,9 +1,6 @@
 package br.com.eaglequeiroz.projecteuler;
 
-import java.util.stream.LongStream;
-
 /**
- *
  * @author Igor Queiroz
  * This Algorithm is responsible for finding the sum of the prime numbers lower than 2 million
  */
@@ -15,8 +12,8 @@ public class _10_summationOfPrimes {
 
     private static long sumOfPrimeNumbersUnderTwoMillion() {
         long sum = 0;
-        for (long i = 1; i <= 2000000; i++){
-            if(isPrime(i)){
+        for (long i = 1; i <= 2000000; i++) {
+            if (isPrime(i)) {
                 sum += i;
             }
         }
@@ -27,7 +24,7 @@ public class _10_summationOfPrimes {
         if (number <= 1) {
             return false;
         }
-        if (number % 2 == 0){
+        if (number % 2 == 0) {
             return number == 2;
         }
 
